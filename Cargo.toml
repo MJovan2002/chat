@@ -6,3 +6,26 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+void = { path = "../void" }
+tokio = { version = "*", features = ["net", "macros", "io-util", "rt", "rt-multi-thread", "sync", "io-std", "signal"] }
+futures = "0.3.25"
+x25519-dalek = "*"
+aes = "*"
+aes-gcm-siv = { version = "*", features = ["heapless"] }
+rand_core1 = { package = "rand_core", version = "0.6.3", features = ["getrandom"] }
+rand_core2 = { package = "rand_core", version = "0.5.1" }
+pbkdf2 = "*"
+
+[dev-dependencies]
+
+[features]
+server = []
+client = []
+
+[[example]]
+name = "client"
+required-features = ["client"]
+
+[[example]]
+name = "server"
+required-features = ["server"]

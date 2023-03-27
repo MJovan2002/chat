@@ -1,0 +1,2 @@
+ [build]
+ rustflags="-Ctarget-cpu=native -Ctarget-feature=+aes,+sse2,+sse4.1,+ssse3"
